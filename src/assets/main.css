@@ -1,0 +1,109 @@
+/* ============================================
+   设计系统：极简纸感风
+   米白纸底 · 细分隔线 · 黑字 · 砖红强调 · 衬线温度数字
+   ============================================ */
+
+:root {
+  /* 色板 */
+  --c-accent: #c74a24; /* 砖红橘：唯一强调色 */
+  --c-accent-hover: #a93d1d;
+  --c-ink: #1c1c1c; /* 主文字 */
+  --c-ink-secondary: #55524c; /* 次级文字 */
+  --c-ink-muted: #918d84; /* 弱化文字 */
+  --c-line: #e5e1d8; /* 分隔线 */
+  --c-line-dark: #1c1c1c; /* 强分隔线（标题下） */
+  --c-paper: #f7f5ef; /* 页面底色 */
+  --c-paper-raised: #fdfcf9; /* 浮起面板底 */
+  --c-tint: #efece3; /* 芯片 / 表头底 */
+
+  /* 圆角：克制 */
+  --radius-md: 6px;
+  --radius-sm: 4px;
+
+  /* Element Plus 主题覆盖 */
+  --el-color-primary: #c74a24;
+  --el-color-primary-light-3: #d46f4e;
+  --el-color-primary-light-5: #e08f77;
+  --el-color-primary-light-7: #ecb0a0;
+  --el-color-primary-light-8: #f2c6ba;
+  --el-color-primary-light-9: #f9e3dc;
+  --el-color-primary-dark-2: #a93d1d;
+  --el-border-radius-base: 4px;
+  --el-text-color-primary: #1c1c1c;
+  --el-text-color-regular: #55524c;
+  --el-border-color: #e5e1d8;
+  --el-border-color-light: #e5e1d8;
+  --el-fill-color-light: #efece3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  background: var(--c-paper);
+  min-height: 100vh;
+  color: var(--c-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  flex: 1;
+}
+
+/* 纸感面板：浅底 + 细边框，无阴影 */
+.panel {
+  background: var(--c-paper-raised);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  margin-bottom: 16px;
+}
+
+/* 区块标题：小型大写间距 + 底部强分隔线 */
+.section-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--c-ink-secondary);
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--c-line-dark);
+  margin-bottom: 16px;
+}
+
+/* 数字统一等宽，对齐整齐 */
+.num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* Element Plus 细节统一 */
+.el-button {
+  font-weight: 600;
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 12px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+}
