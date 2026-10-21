@@ -34,7 +34,6 @@ function onChange(value) {
   if (division) {
     emit('select', { ...division, path: divisionStore.getDivisionPath(division) })
   }
-  selected.value = [] // 切换新区划后重置级联选择器，不保留旧选择
 }
 
 /** 首次展开下拉时确保区划数据已加载 */
